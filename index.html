@@ -1,0 +1,12 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Parent-to-iframe focus</title>
+<style>button:focus { outline: 3px solid blue; }</style>
+<button id="enter">Focus iframe button</button>
+<iframe title="Test frame" srcdoc="<style>button:focus { outline: 3px solid blue; }</style><button id='inner'>Iframe button</button>"></iframe>
+<script>
+  document.querySelector('#enter').onclick = () => {
+    const button = document.querySelector('iframe').contentDocument.querySelector('#inner');
+    queueMicrotask(() => button.focus());
+  };
+</script>

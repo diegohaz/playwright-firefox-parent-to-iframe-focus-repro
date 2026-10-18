@@ -1,0 +1,12 @@
+{
+  "name": "playwright-firefox-parent-to-iframe-focus-repro",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test --browser=firefox --workers=1 --retries=0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1"
+  }
+}
